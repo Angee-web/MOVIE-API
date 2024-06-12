@@ -255,7 +255,7 @@ footer a:hover{
     <script>
         async function fetchMovieData(movieTitle) {
             const apiKey = '9180b9cb'; // API KEY
-            const url = `http://www.omdbapi.com/?apikey=${apiKey}&t=${encodeURIComponent(movieTitle)}`;
+            const url = `http://www.omdbapi.com/?apikey=${apiKey}&t=${(movieTitle)}`;
 
             try {
                 const response = await fetch(url);
