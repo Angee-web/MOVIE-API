@@ -1,5 +1,7 @@
 #API 
 My first time successfully fetching data with an API.
+I used internal CSS and JAVASCRIPT because i found it easier to navigate this way
+For my next project i'll be using external styling and JS
 The firstpage implements an onclick button with a search input field that takes the title of the movie you want and fetches the data
 I used the OMDb API for movies
 I had to request for an API key(I did not realize this at first and this was an issue)
