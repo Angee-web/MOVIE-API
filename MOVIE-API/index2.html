@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=!, initial-scale=1.0">
+    <title>ACTORS API
+    </title>
+
+    <STYLE>
+        *,
+body{
+    margin:0;
+    padding:0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    /* width:90%; */
+    /* max-width: 1000px; */
+    overflow-x:hidden;
+}
+
+@media screen and (max-width: 768px) {
+    *,
+    body{
+        /* margin:0;
+        /* width:100%; */
+        overflow-x:hidden;
+    }
+}
+
+/*NAV BAR */
+
+.navbar-main{
+    margin:20px;
+}
+
+.navbar{
+    background: beige;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+.navlogo{
+    color:blueviolet;
+    font-size:larger;
+    text-shadow: 2px 2px grey;
+}
+
+.navlogo span{
+    color:black;
+    font-size: larger;
+}
+
+.navlinks ul{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:25px;
+    list-style: none;
+    font-weight: bold;
+}
+
+.navlinks li:hover{
+color:blueviolet;
+}
+
+.links a{
+    text-decoration: none;
+    color:blueviolet;
+}
+
+.links a:hover{
+    color:green;
+    text-shadow: 2px 2px rgb(217, 178, 178);
+}
+
+@media screen and (max-width: 768px){
+    .navlinks ul{
+        display:block;
+        line-height: 30px;
+    }
+}
+
+.search-section{
+    margin-top:25px;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+label{
+    font-weight: bold;
+}
+
+select{
+border: 2px solid;
+}
+
+        /* SCROLL SECTION */
+.scroll-container{
+    width:100%;
+    overflow: hidden;
+    white-space: nowrap;
+    background: blueviolet;
+    color:white;
+    padding:10px;
+    margin-top: 25px;
+}
+
+.scroll-text{
+    display: inline-block;
+    /* this adjusts the speed of the scroll */
+    animation: marquee 20s linear infinite;
+}
+
+/* main animation for scrolling */
+@keyframes marquee{
+    0%{transform: translateX(100%);}
+    100%{transform: translateX(-100%);}
+}
+
+/* API SECTION */
+.apisec{
+    margin-bottom: 30px;
+    margin: 20px;
+}
+
+.apisec h4{
+    background: blueviolet;
+    color:white;
+    padding:8px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.apiContainer{
+    margin:10px;
+    border:2px solid rgb(67, 226, 43);
+    padding:8px;
+    /* max-width: fit-content; */
+    /* width:300px; */
+}
+
+.apicard{
+    padding:10px;
+    width:200px;
+    height: 200px;
+}
+
+.api-card img{
+    border: 2px solid blueviolet;
+    border-radius:10px;
+    margin-left:20px;
+    width:150px;
+    height: 150px;
+}
+
+.api-content{
+    /* display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:8px; */
+    font-weight: bold;
+    line-height: 23px;
+    font-size: small;
+}
+
+/* API SECTION */
+.actorsec{
+    margin-bottom: 30px;
+    margin: 20px;
+}
+
+.actorsec h4{
+    background: blueviolet;
+    color:white;
+    padding:8px;
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+.actorContainer{
+    margin:10px;
+    border:2px solid blueviolet;
+    padding:20px;
+    max-width: fit-content;
+    width: fit-content;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+
+.actorcard{
+    padding:10px;
+    width:fit-content;
+    height: 300px;
+    display: flex;
+
+}
+
+.actor-card img{
+    border: 2px solid blueviolet;
+    border-radius:10px;
+    margin-left:20px;
+    width:250px;
+    height: 150px;
+    padding:10px;
+}
+
+.actor-content{
+    /* display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:8px; */
+    font-weight: bold;
+    line-height: 23px;
+    font-size: small;
+}
+
+@media screen and (max-width: 768px){
+    .actorContainer{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .actor-card img{
+        width:200px;
+    }
+}
+
+    </STYLE>
+</head>
+<body>
+    <!-- nav bar -->
+<div class="navbar-main">
+    <nav class="navbar">
+        <div class="navlogo">
+            <h1>Movie <span>.</span> Watch</h1>
+        </div>
+        <div class="navlinks">
+            <ul class="links">
+                <li>Home</li>
+                <li>About</li>
+                <li>Services</li>
+                <li><a href="index.html" target="_blank">Movies</a></li>
+            </ul>
+        </div>
+    </nav>
+
+        <!-- search section -->
+        <div class="search-section">
+            <!-- dropdown menu -->
+            <div class="dropdown">
+                <label for="genre">Choose Your Poison:</label>
+                <select name="animegenre" id="genre">
+                    <option value="action">Action</option>
+                    <option value="romcom">RomCom</option>
+                    <option value="paranormal">Paranormal</option>
+                    <option value="highschool">High School</option>
+                </select>
+            </div>
+
+    <!-- SCROLLING SECTION -->
+    <div class="scroll-container">
+        <h4 class="scroll-text">Subscribe To Our Website To Get The Best Streaming and Downloading Services</h4>
+    </div>  
+
+    <!-- api section -->
+    <div class="actorsec">
+        <h4>Famous Actors</h4>
+        <div class="actorContainer">
+            <!-- anime is to be rendered here -->
+  
+        </div>
+    </div>
+
+
+    <script>
+        // fetching from actor api
+let actorData;
+
+async function getActor() {
+  //here using the try and catch
+  
+  try {
+    //fetching from actor api
+    const response = await fetch(
+      "https://freetestapi.com/api/v1/actors" //endpoint
+    );
+    //here is converting response to json
+    actorData = await response.json();
+    // invoking the update ui function here so the browser reads it and updates it as the page loads
+    updateUi();
+    //setting the results gotten from the actor api to data
+    console.log(actorData, "actorData");
+    // return results;
+  } catch (error) {
+    //here is catching error
+    console.log(error, "error");
+  }
+}
+// invoking the function
+getActor();
+// inspecting the fetch call
+console.log(actorData, "data");
+
+// function to append the contents to the div
+const actorContainer = document.querySelector(".actorContainer");
+// to update ui
+const updateUi = () => {
+  for (let actor of actorData) {
+    const cardBody = document.createElement("div");
+    cardBody.classList.add("actor-card");
+    console.log(actor, "actor here");
+    cardBody.innerHTML = `
+    <img src="${actor.image}" alt="${actor.name}">
+                        <div class="actor-content">
+                            <div>
+                                <p>Name:</p>
+                                <p>${actor.name}</p>
+                            </div>
+                            <div>
+                                <p>Birth Year:</p>
+                                <p>${actor.birth_year}</p>
+                            </div>
+                            <div>
+                                <p>Nationality:</p>
+                                <p>${actor.nationality}</p>
+                            </div>
+                            <div>
+                                <p>Biography:</p>
+                                <p>${actor.biography}</p>
+                            </div>
+        
+                        </div>
+`;
+// append the card to html
+    actorContainer.appendChild(cardBody);
+  }
+};
+    </script>
+</body>
+</html>

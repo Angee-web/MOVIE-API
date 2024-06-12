@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Search With API</title>
+
+    <!-- css styling -->
+    <style>
+        *,body{
+            overflow-x:hidden;
+        }
+
+        /*NAV BAR */
+
+.navbar-main{
+    margin:20px;
+}
+
+.navbar{
+    background: beige;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+.navlogo{
+    color:blueviolet;
+    font-size:larger;
+    text-shadow: 2px 2px grey;
+}
+
+.navlogo span{
+    color:black;
+    font-size: larger;
+}
+
+.navlinks ul{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:25px;
+    list-style: none;
+    font-weight: bold;
+}
+
+.navlinks li:hover{
+color:blueviolet;
+}
+
+.links a{
+    text-decoration: none;
+    color:blueviolet;
+}
+
+.links a:hover{
+    color:green;
+    text-shadow: 2px 2px rgb(217, 178, 178);
+}
+
+@media screen and (max-width: 768px){
+    .navlinks ul{
+        display:block;
+        line-height: 30px;
+    }
+}
+
+.search-section{
+    margin-top:25px;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+label{
+    font-weight: bold;
+}
+
+select{
+border: 2px solid;
+}
+
+        /* SCROLL SECTION */
+.scroll-container{
+    width:100%;
+    overflow: hidden;
+    white-space: nowrap;
+    background: blueviolet;
+    color:white;
+    padding:10px;
+    margin-top: 25px;
+}
+
+.scroll-text{
+    display: inline-block;
+    /* this adjusts the speed of the scroll */
+    animation: marquee 20s linear infinite;
+}
+
+/* main animation for scrolling */
+@keyframes marquee{
+    0%{transform: translateX(100%);}
+    100%{transform: translateX(-100%);}
+}
+
+/* search section */
+input{
+    border: 2px solid;
+    background-image: url('searchicon.png');
+    background-repeat:no-repeat;
+    background-size: 20px 25px;
+    padding:5px;
+}
+
+button{
+    padding:5px;
+    border-radius:8px; 
+    border:blueviolet;
+    background: blueviolet;
+    color:white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+/* FOOTER */
+.footer{
+    
+    /* padding:10px 15px; */
+    width: 100%;
+    /* margin-top: 40px; */
+}
+
+footer{
+    background: beige;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:10px;
+    padding: 10px;
+    line-height: 18px;
+}
+
+footer a{
+    text-decoration: none;
+    color:blueviolet;
+}
+
+footer a:visited{
+    color:rgb(141, 88, 23);
+}
+
+footer a:hover{
+    color:black;
+    text-decoration: underline;
+}
+
+.contacts{
+    display: grid;
+    gap:8px;
+}
+
+@media screen and (max-width: 768px) {
+    .contacts{
+    display: block;
+    }
+
+    #email{
+    display:flex;
+    word-break: break-all;
+    }
+
+    #Ig{
+        display:block;
+    }
+
+}
+
+    </style>
+</head>
+<body>
+<!-- nav bar -->
+<div class="navbar-main">
+    <nav class="navbar">
+        <div class="navlogo">
+            <h1>Movie <span>.</span> Watch</h1>
+        </div>
+        <div class="navlinks">
+            <ul class="links">
+                <li>Home</li>
+                <li>About</li>
+                <li>Services</li>
+                <li><a href="index2.html" target="_blank">Actors</a></li>
+            </ul>
+        </div>
+    </nav>
+
+        <!-- search section -->
+        <div class="search-section">
+            <!-- dropdown menu -->
+            <div class="dropdown">
+                <label for="genre">Choose Your Poison:</label>
+                <select name="animegenre" id="genre">
+                    <option value="action">Action</option>
+                    <option value="romcom">RomCom</option>
+                    <option value="paranormal">Paranormal</option>
+                    <option value="highschool">High School</option>
+                </select>
+            </div>
+
+    <!-- SCROLLING SECTION -->
+    <div class="scroll-container">
+        <h4 class="scroll-text">Subscribe To Our Website To Get The Best Streaming and Downloading Services</h4>
+    </div>  
+
+
+    <!-- MOVIE SEARCH SECTION -->
+    <div>
+     <h1>Movie Search</h1>
+     <input type="text" id="movieTitle" placeholder="Enter movie title">
+     <button onclick="searchMovie()">Search</button>
+     <!-- empty div for the movie searched -->
+     <div id="movieData"></div>
+    </div>
+<br><br><br>
+    <!-- footer -->
+    <div class="footer">
+        <footer>
+            <div><b>Copyright &copy; Movie.Watch, 2024.</b></div>
+            <div>
+                <h4>Contact Us:</h4>
+                <div class="contacts">
+                 <p>Via WhatsApp: <a href="tel:+2349039558051">09039558051</a></p>
+                 <p>Via Email: <a href="mailto:adaezeugwumba034@gmail.com" id="email">adaezeugwumba034@gmail.com</a></p>
+                 <p>Via Instagram:  <a href="https://www.instagram.com/ang_eee_?igsh=MWNwaDZpaTFjd3d5Mw%3D&utm_source=qr" id="Ig">@ ang_eee_eee</a></p>
+                </div>
+            </div>
+            <div>
+                <h4>Countries We Serve:</h4>
+                <p>Nigeria</p>
+                <p>America</p>
+                <p>Japan</p>
+                <p>China</p>
+                <p>England</p>
+                <p>Germany</p>
+                <p>Sweden</p>
+            </div>
+        </footer>
+    </div>
+
+      
+
+
+    <!-- javascript -->
+    <script>
+        async function fetchMovieData(movieTitle) {
+            const apiKey = '9180b9cb'; // API KEY
+            const url = `http://www.omdbapi.com/?apikey=${apiKey}&t=${encodeURIComponent(movieTitle)}`;
+
+            try {
+                const response = await fetch(url);
+                // If the response is not okay (i.e., response.ok is false), an error is thrown with a message that includes the HTTP status code
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                return data;
+                // The catch block logs the error message to the console.
+            } catch (error) {
+                console.error('Error fetching movie data:', error);
+            }
+        }
+
+        // inspect
+        // console.log(MovieData, "MovieData")
+
+        function searchMovie() {
+            const movieTitle = document.getElementById('movieTitle').value;
+
+
+            fetchMovieData(movieTitle).then(data => {
+                const movieDataDiv = document.getElementById('movieData');
+                movieDataDiv.innerHTML = `
+                    <h2>${data.Title}</h2>
+                    <p><strong>Year:</strong> ${data.Year}</p>
+                    <p><strong>Genre:</strong> ${data.Genre}</p>
+                    <p><strong>Director:</strong> ${data.Director}</p>
+                    <p><strong>Box Office:</strong> ${data.BoxOffice}</p>
+                    <p><strong>Plot:</strong> ${data.Plot}</p>
+                    <img src="${data.Poster}" alt="Movie Poster">
+                `;
+            });
+        }
+    </script>
+</body>
+</html>
